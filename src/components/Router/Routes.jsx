@@ -3,7 +3,7 @@ import GenrePage from "../GenrePage/GenrePage";
 import Homepage from "../Homepage/Homepage";
 import InstrumentPage from "../InstrumentPage/InstrumentPage";
 import ReleasePage from "../ReleasePage/ReleasePage";
-
+import InstrumentDetail from '../InstrumentPage/InstrumentDetail';
 
 const routes = [
     {
@@ -13,21 +13,25 @@ const routes = [
 
     {
         path: "/Artists",
-        element: < ArtistPage/>
+        element: < ArtistPage />
     },
     {
         path: "/Artists/releases",
-        element: < ReleasePage/>
+        element: < ReleasePage />
     },
     {
         path: "/genres",
-        element: < GenrePage/>
+        element: < GenrePage />
     },
     {
         path: "/instruments",
-        element: < InstrumentPage/>
+        element: < InstrumentPage />
     },
-    
+    {
+        path: "/instruments/:id",
+        element: <InstrumentDetail />
+    },
+
 
 ]
 
