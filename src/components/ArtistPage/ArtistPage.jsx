@@ -19,6 +19,10 @@ export default function ArtistPage() {
   };
 
   useEffect(() => {
+    fetchArtists();
+  }, [searchQuery]);
+
+  useEffect(() => {
     searchQuery === "" ? "" : fetchArtists();
   }, [searchQuery]);
 
@@ -37,6 +41,20 @@ export default function ArtistPage() {
                 return (
                   <div key={i} className="results__artist">
                     <Link to={"/Artists/" + artist.id}>{artist.name}</Link>
+                    <p className="country">{artist.country}</p>
+                    <p className="life-span">
+                      {artist["life-span"].begin}
+                      {artist["life-span"].ended == true
+                        ? " - " + artist["life-span"].end
+                        : ""}
+                    </p>
+                    <ul>
+                      {artist.aliases == null
+                        ? ""
+                        : artist.aliases.map((alias, i) => {
+                            return <li key={i}>{alias.name}</li>;
+                          })}
+                    </ul>
                   </div>
                 );
               })}
