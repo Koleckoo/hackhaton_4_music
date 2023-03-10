@@ -44,13 +44,14 @@ export default function GenrePage() {
   return (
     <>
       <NavigationBar />
-      <div className="genre_list">
-        <button onClick={fetchGenres}>Show list of genres</button>
+      <div className="container mt-4">
+                <h1 className="mb-4">Show list of genres</h1>
+        <button className="btn btn-primary mt-2" onClick={fetchGenres}>Show</button>
 
         {genres.map((genre) => {
-          return < div className="genre_list-tem" key={genre.id}>Genre name: {genre.name}
+          return < div className="mb-3 justify-content-center" key={genre.id}><h4>Genre name: {genre.name}</h4>
             <ul>
-              <li>id: {genre.id}</li>
+              <li className="">id: {genre.id}</li>
             </ul>
 
           </div>
