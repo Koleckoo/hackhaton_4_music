@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import NavigationBar from "../Navigation/NavigationBar";
-import monkey from './monkey.jpg'
+import monkey from "./monkey.jpg";
 
 export default function Homepage() {
   return (
@@ -18,7 +18,7 @@ export default function Homepage() {
       >
         <h1 className="mb-3 text-center text-light">Welcome</h1>
         <h2 className="mb-3 text-center text-light">
-          Team HUBABUBA present Hackathon 4 project
+          Team HUBABUBA presents Hackathon 4 project
         </h2>
       </div>
     </>
