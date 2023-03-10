@@ -19,8 +19,8 @@ export default function ReleasePage() {
   }, [page]);
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="row">
         {page > 0 ? (
           <button onClick={() => setPage(page - 10)}>Previos page</button>
         ) : (
@@ -31,7 +31,9 @@ export default function ReleasePage() {
       {releases == "" ? (
         <div>Loading...</div>
       ) : (
-        releases.map((release) => <Release key={release.id} release = {release} />)
+        releases.map((release) => (
+          <Release key={release.id} release={release} />
+        ))
       )}
     </div>
   );
