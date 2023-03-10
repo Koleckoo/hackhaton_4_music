@@ -23,14 +23,21 @@ export default function ReleasePage() {
     <>
       <NavigationBar />
       <div className="container">
-        <div className="row">
+        <ul className="pagination mb-4 mt-2">
           {page > 0 ? (
-            <button onClick={() => setPage(page - 10)}>Previos page</button>
+            <button
+              className="page-link mr-2"
+              onClick={() => setPage(page - 10)}
+            >
+              Previos page
+            </button>
           ) : (
             ""
           )}
-          <button onClick={() => setPage(page + 10)}>Next page</button>
-        </div>
+          <button className="page-link" onClick={() => setPage(page + 10)}>
+            Next page
+          </button>
+        </ul>
         {releases == "" ? (
           <div>Loading...</div>
         ) : (
