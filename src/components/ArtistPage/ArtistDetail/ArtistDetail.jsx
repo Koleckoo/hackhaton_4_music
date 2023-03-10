@@ -19,30 +19,12 @@ export default function ArtistDetail() {
   }, []);
 
   return (
-    <div className="artist.detail">
+    <div class="container">
       <h1>Name: {artistData.name}</h1>
       <h4>Country: {artistData.country}</h4>
       <h4>Gender: {artistData.gender}</h4>
       <h4>Type: {artistData.type}</h4>
-      <Link to={`/Artists/${artistData.id}/releases`}>Releases</Link>
+      <Link class="btn btn-primary" to={`/Artists/${artistData.id}/releases`}>Releases</Link>
     </div>
   );
 }
-
-// {artistData == ""
-// ? ""
-// : artistData.releases.map((release, i) => {
-//     return (
-//       <div key={i}>
-//         <h2>{release.title}</h2>
-//         <p>{release.date}</p>
-//         <p>
-//           {release["text-representation"].script} -{" "}
-//           {release["text-representation"].language}
-//         </p>
-//         <p>{release.area}</p>
-
-//         {/* title, text-representation, date and area. */}
-//       </div>
-//     );
-//   })}

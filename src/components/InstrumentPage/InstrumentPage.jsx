@@ -40,6 +40,7 @@ export default function InstrumentPage() {
 
     return (
         <div className="container mt-4">
+
             <h1 className="mb-4">Search for your favourite music instrument</h1>
             <div className="mb-3">
                 <input type="text" className="form-control" placeholder="Search" value={searchQuery} onChange={handleChange} />
