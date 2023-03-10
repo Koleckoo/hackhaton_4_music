@@ -31,7 +31,7 @@ export default function ReleasePage() {
       {releases == "" ? (
         <div>Loading...</div>
       ) : (
-        releases.map((release) => <Release key={release.id} {...release} />)
+        releases.map((release) => <Release key={release.id} release = {release} />)
       )}
     </div>
   );
