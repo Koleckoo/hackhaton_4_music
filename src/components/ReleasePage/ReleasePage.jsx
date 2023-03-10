@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Release from "./Release";
+import NavigationBar from "../Navigation/NavigationBar";
 
 export default function ReleasePage() {
   const [releases, setReleases] = useState("");
@@ -19,14 +20,24 @@ export default function ReleasePage() {
   }, [page]);
 
   return (
-    <div className="container">
-      <div className="row">
-        {page > 0 ? (
-          <button onClick={() => setPage(page - 10)}>Previos page</button>
+    <>
+      <NavigationBar />
+      <div className="container">
+        <div className="row">
+          {page > 0 ? (
+            <button onClick={() => setPage(page - 10)}>Previos page</button>
+          ) : (
+            ""
+          )}
+          <button onClick={() => setPage(page + 10)}>Next page</button>
+        </div>
+        {releases == "" ? (
+          <div>Loading...</div>
         ) : (
-          ""
+          releases.map((release) => (
+            <Release key={release.id} release={release} />
+          ))
         )}
-        <button onClick={() => setPage(page + 10)}>Next page</button>
       </div>
       {releases == "" ? (
         <div>Loading...</div>
@@ -35,6 +46,6 @@ export default function ReleasePage() {
           <Release key={release.id} release={release} />
         ))
       )}
-    </div>
+    </>
   );
 }
