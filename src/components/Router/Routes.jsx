@@ -12,11 +12,11 @@ const routes = [
     },
 
     {
-        path: "/Artist/:id",
+        path: "/Artists",
         element: < ArtistPage/>
     },
     {
-        path: "/Artist/:id/releases",
+        path: "/Artists/releases",
         element: < ReleasePage/>
     },
     {
