@@ -3,4 +3,4 @@ import { createBrowserRouter } from 'react-router-dom'
 
 const Router = createBrowserRouter(Routes)
 
-export default Router
+export default Router;
