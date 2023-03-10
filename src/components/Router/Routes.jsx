@@ -4,32 +4,28 @@ import Homepage from "../Homepage/Homepage";
 import InstrumentPage from "../InstrumentPage/InstrumentPage";
 import ReleasePage from "../ReleasePage/ReleasePage";
 
-
 const routes = [
-    {
-        path: "/",
-        element: < Homepage />
-    },
+  {
+    path: "/",
+    element: <Homepage />,
+  },
 
-    {
-        path: "/Artists",
-        element: < ArtistPage/>
-    },
-    {
-        path: "/Artists/releases",
-        element: < ReleasePage/>
-    },
-    {
-        path: "/genres",
-        element: < GenrePage/>
-    },
-    {
-        path: "/instruments",
-        element: < InstrumentPage/>
-    },
-    
-
-]
-
+  {
+    path: "/Artists",
+    element: <ArtistPage />,
+  },
+  {
+    path: "/Artists/:id/releases",
+    element: <ReleasePage />,
+  },
+  {
+    path: "/genres",
+    element: <GenrePage />,
+  },
+  {
+    path: "/instruments",
+    element: <InstrumentPage />,
+  },
+];
 
 export default routes;
