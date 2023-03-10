@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import NavigationBar from "../../Navigation/NavigationBar";
 
 export default function ArtistDetail() {
   const [artistData, setArtistData] = useState([]);
@@ -19,12 +20,15 @@ export default function ArtistDetail() {
   }, []);
 
   return (
-    <div class="container">
-      <h1>Name: {artistData.name}</h1>
-      <h4>Country: {artistData.country}</h4>
-      <h4>Gender: {artistData.gender}</h4>
-      <h4>Type: {artistData.type}</h4>
-      <Link class="btn btn-primary" to={`/Artists/${artistData.id}/releases`}>Releases</Link>
-    </div>
+    <>
+      <NavigationBar />
+      <div class="container">
+        <h1>Name: {artistData.name}</h1>
+        <h4>Country: {artistData.country}</h4>
+        <h4>Gender: {artistData.gender}</h4>
+        <h4>Type: {artistData.type}</h4>
+        <Link class="btn btn-primary" to={`/Artists/${artistData.id}/releases`}>Releases</Link>
+      </div>
+    </>
   );
 }

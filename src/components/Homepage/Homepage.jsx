@@ -1,27 +1,26 @@
 import { Link } from "react-router-dom";
+import NavigationBar from "../Navigation/NavigationBar";
+import monkey from './monkey.jpg'
 
 export default function Homepage() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <Link class="navbar-brand" to="/">Music App</Link>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <Link class="nav-link" to="/Artists">Artists</Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/instruments">Instruments</Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/genres">Genres</Link>
-            </li>
-          </ul>
-        </div>
+    <>
+      <NavigationBar />
+      <div
+        className="container-fluid d-flex flex-column justify-content-center align-items-center bg-dark"
+        style={{
+          backgroundImage: `url(${monkey})`,
+          height: "100vh",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <h1 className="mb-3 text-center text-light">Welcome</h1>
+        <h2 className="mb-3 text-center text-light">
+          Team HUBABUBA present Hackathon 4 project
+        </h2>
       </div>
-    </nav>
+    </>
   );
 }
